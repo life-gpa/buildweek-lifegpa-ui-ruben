@@ -114,6 +114,12 @@ a {
   padding: 1%;
   width: 100%;
 }
+@media (min-width: 800px) {
+  .footer .contact input,
+  .footer .contact textarea {
+    width: 75%;
+  }
+}
 .footer .contact input {
   margin-bottom: 2.5%;
 }
