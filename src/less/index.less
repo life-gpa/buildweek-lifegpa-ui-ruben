@@ -2,142 +2,225 @@
 @import 'mixins';
 @import 'variables';
 
+/*
+html {
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+}
+
 a {
   color: inherit;
   text-decoration: none;
 }
 
-#root {
-  color: @foreground;
-  font-family: 'Rajdhani', sans-serif;
-  font-size: 1.5rem;
+.header {
+  background-color: rgb(15, 15, 15);
+  padding: 5% 0;
+  text-align: center;
+
+  .navigation {
+    padding: 5% 0;
+
+    a {
+      border-radius: 5px;
+      padding: 1% 1.5%;
+      transition: background-color 0.5s;
+      text-transform: uppercase;
+
+      @media screen and (min-width: @phone) {
+        padding: 1% 5%;
+      }
+
+      @media screen and (min-width: @tablet) {
+        margin: 2%;
+      }
+
+      &:hover {
+        background-color: lightcoral;
+      }
+    }
+  }
+
+  h1, h2 {
+    padding: 5% 0;
+    font-size: 1.5rem;
+
+    @media screen and (min-width: @phone) {
+      padding: 2.5%;
+      font-size: 2.5rem;
+    }
+
+    @media screen and (min-width: @tablet) {
+      font-size: 4.20rem;
+    }
+  }
+
+  section {
+    flex-flow: column;
+    .muscle(@j: space-evenly);
+
+    button {
+      background: none;
+      border: 1px solid white;
+      border-radius: 3px;
+      color: inherit;
+      font-size: 1.25rem;
+      margin: 5%;
+      padding: 2.5%;
+      text-transform: uppercase;
+      width: 80%;
+    }
+  }
+}
+*/
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+html {
+  // background-color: rgb(70, 70, 70);
+  background-color: rgb(25, 25, 25);
+  font-family: 'Montserrat', sans-serif;
 }
 
 .header {
-  background-color: @background;
-  padding: 2.5% 0;
+  background-color: rgb(35, 35, 35);
+  // border-bottom: 5px solid lightcoral;
+  color: white;
+  padding: 5% 0 2.5%;
   text-align: center;
 
-  @media (min-width: @tablet) {
-    .muscle(@j: space-evenly);
+  .navigation {
+    margin-bottom: 5%;
+
+    a {
+      border-radius: 5px;
+      font-size: 80%;
+      margin: 1%;
+      padding: 1% 2.5%;
+      text-transform: uppercase;
+      transition: background-color 0.5s;
+
+      &:hover {
+        background-color: lightcoral;
+      }
+    }
   }
-}
 
-.branding {
-  #logo {
-    background: @accent;
-    margin: 0 auto;
-    flex-flow: column;
-    height: 100px;
-    .muscle(flex-end, flex-end);
-    padding: 10px;
-    width: 100px;
-
-    .b1, .b2, .b3 {
-      background-color: @background;
-      height: 10px;
-    }
-
-    .b1 {
-      width: 25%;
-    }
-
-    .b2 {
-      width: 50%;
-    }
-
-    .b3 {
-      width: 75%;
-    }
+  h1, h2 {
+    margin: 10% 0;
   }
 
   h1 {
-    color: @accent;
-    font-weight: normal;
+    font-size: 4.2rem;
+    font-weight: 300;
+  }
 
-    span {
-      &:first-child {
-        font-weight: bold;
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  section {
+    flex-flow: column;
+    .muscle(@j: space-evenly);
+
+    button {
+      background: none;
+      border: 2px solid lightcoral;
+      border-radius: 5px;
+      color: inherit;
+      font-weight: bold;
+      letter-spacing: 2.5px;
+      margin: 2.5% 0;
+      padding: 2.5% 5%;
+      text-transform: uppercase;
+      transition: background-color 0.5s;
+      width: 90%;
+
+      &:hover {
+        background-color: lightcoral;
       }
 
       &:last-child {
-        font-size: 50%;
+        background-color: lightcoral;
+        border-color: lightcoral;
+
+        &:hover {
+          background: none;
+        }
       }
-    }
-  }
-}
-
-.navigation {
-  margin: 5% 0;
-
-  @media (min-width: @tablet) {
-    margin: 0;
-    width: 50%;
-  }
-
-  a {
-    border-radius: 2px;
-    padding: 1% 2.5%;
-    transition: background-color .5s, color .25s;
-
-    @media (min-width: @tablet) {
-      margin: 1.69%;
-    }
-
-    @media (min-width: @desktop) {
-      margin: 4.20%;
-    }
-
-    &:hover {
-      background-color: @accent;
-      color: @background;
     }
   }
 }
 
 .features {
-  background-color: @accent;
-  color: @background;
-  padding: 5%;
-  text-align: justify;
+  // background-color: rgb(245, 245, 245);
+  // padding: 0 5%;
 
   .feature {
-    padding: 2.5%;
+    background-color: rgb(35, 35, 35);
+    border-bottom: 5px solid lightcoral;
+    // border-radius: 10px;
+    color: white;
+    margin: 5% 0;
+
+    h3 {
+      background-color: lightcoral;
+      // border-top-left-radius: 5px;
+      // border-top-right-radius: 5px;
+      padding: 2.5%;
+      text-align: center;
+    }
+    
+    p {
+      // border-radius: 10px;
+      padding: 5%;
+      text-align: justify;
+    }
   }
 }
 
 .footer {
-  background-color: @background;
-  padding-bottom: 2.5%;
-  text-align: center;
+  background-color: rgb(35, 35, 35);
+  // border-top: 5px solid lightcoral;
+  color: white;
 
-  .contact {
-    padding: 2.5%;
+  .contact-us {
+    flex-flow: column;
+    .muscle(@j: space-evenly);
+    padding: 5% 0;
 
-    input, textarea {
-      background-color: @accent;
-      border: 0;
-      border-radius: 3px;
-      color: @background;
-      padding: 1%;
-      width: 100%;
-
-      @media (min-width: @tablet) {
-        width: 75%;
-      }
-    }
-
-    input {
+    h4 {
       margin-bottom: 2.5%;
     }
 
+    input, textarea {
+      background-color: lightcoral;
+      border: 2px solid lightcoral;
+      border-radius: 5px;
+      color: white;
+      font-family: inherit;
+      margin: 2.5% 0;
+      padding: 2.5%;
+      width: 80%;
+
+      &::placeholder {
+        color: rgb(35, 35, 35);
+        opacity: 1;
+      }
+    }
+
     textarea {
-      height: 150px;
+      height: 125px;
       resize: none;
     }
   }
 
   .copyright {
     font-size: 80%;
+    padding: 2.5% 0 5%;
+    text-align: center;
   }
 }
