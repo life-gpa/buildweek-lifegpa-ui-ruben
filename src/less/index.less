@@ -1,143 +1,225 @@
+// font awesome
+@import 'fa/fontawesome';
+@import 'fa/solid';
+
+// general
 @import 'reset';
 @import 'mixins';
 @import 'variables';
 
+// global
 a {
   color: inherit;
   text-decoration: none;
 }
 
-#root {
-  color: @foreground;
-  font-family: 'Rajdhani', sans-serif;
-  font-size: 1.5rem;
+html {
+  font-family: 'Montserrat', sans-serif;
 }
 
+// header
 .header {
-  background-color: @background;
-  padding: 2.5% 0;
+  background-color: rgb(25, 25, 25);
+  border-bottom: 5px solid lightcoral;
+  color: white;
+  flex-flow: column;
+  height: 100vh;
+  .muscle(@j: space-evenly);
   text-align: center;
 
-  @media (min-width: @tablet) {
-    .muscle(@j: space-evenly);
-  }
-}
-
-.branding {
-  #logo {
-    background: @accent;
-    margin: 0 auto;
-    flex-flow: column;
-    height: 100px;
-    .muscle(flex-end, flex-end);
-    padding: 10px;
-    width: 100px;
-
-    .b1, .b2, .b3 {
-      background-color: @background;
-      height: 10px;
-    }
-
-    .b1 {
-      width: 25%;
-    }
-
-    .b2 {
-      width: 50%;
-    }
-
-    .b3 {
-      width: 75%;
-    }
-  }
-
   h1 {
-    color: @accent;
-    font-weight: normal;
+    font-size: 4.20rem;
+    font-weight: 300;
 
-    span {
-      &:first-child {
-        font-weight: bold;
+    @media screen and (min-width: 720px) {
+      font-size: 10rem;
+    }
+
+    @media screen and (min-width: 1000px) {
+      font-size: 10rem;
+    }
+  }
+
+  h2 {
+    font-size: 1.5rem;
+
+    @media screen and (min-width: 720px) {
+      font-size: 2.5rem;
+    }
+  }
+
+  section {
+    width: 100%;
+
+    button {
+      background: none;
+      border: 2px solid white;
+      border-radius: 5px;
+      color: inherit;
+      font-weight: bolder;
+      margin: 2.5%;
+      padding: 5% 0;
+      text-transform: uppercase;
+      transition: background-color 0.5s, border-color 0.5s;
+      width: 80%;
+
+      @media screen and (min-width: 720px) {
+        font-size: 1.45rem;
+        padding: 2.5% 0;
+        width: 40%;
+      }
+
+      &:hover {
+        background-color: lightcoral;
+        border-color: lightcoral;
+        cursor: pointer;
       }
 
       &:last-child {
-        font-size: 50%;
+        background-color: lightcoral;
+        border-color: lightcoral;
+
+        &:hover {
+          background: none;
+          border-color: white;
+        }
       }
     }
+  }
+
+  #downdown {
+    font-size: 2.5rem;
+    transition: color 0.5s;
+
+    &:hover {
+      color: lightcoral;
+      cursor: pointer;
+    }
+  }
+}
+
+// navigation
+#hamburger {
+  border-radius: 100%;
+  font-size: 1.5rem;
+  left: 0;
+  margin: 2% 0 0 2%;
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  z-index: 10;
+
+  @media screen and (min-width: 720px) {
+    display: none;
+  }
+
+  &:hover {
+    background-color: lightcoral;
+    color: rgb(25, 25, 25);
   }
 }
 
 .navigation {
-  margin: 5% 0;
+  background-color: lightcoral;
+  flex-flow: column;
+  height: 100vh;
+  .muscle(@j: space-evenly);
+  position: absolute;
+  width: 100%;
 
-  @media (min-width: @tablet) {
-    margin: 0;
-    width: 50%;
+  @media screen and (min-width: 720px) {
+    background: none;
+    flex-flow: row;
+    height: 10%;
+    position: initial;
   }
 
   a {
-    border-radius: 2px;
-    padding: 1% 2.5%;
-    transition: background-color .5s, color .25s;
+    display: block;
+    font-weight: bolder;
+    padding: 5% 0;
+    text-transform: uppercase;
+    width: 100%;
 
-    @media (min-width: @tablet) {
-      margin: 1.69%;
-    }
-
-    @media (min-width: @desktop) {
-      margin: 4.20%;
+    @media screen and (min-width: 720px) {
+      display: inline;
+      font-weight: 300;
+      padding: 0;
+      transition: color 0.5s;
     }
 
     &:hover {
-      background-color: @accent;
-      color: @background;
+      color: rgb(25, 25, 25);
+
+      @media screen and (min-width: 720px) {
+        color: lightcoral;
+      }
     }
   }
 }
 
-.features {
-  background-color: @accent;
-  color: @background;
-  padding: 5%;
-  text-align: justify;
+.hidden {
+  display: none;
 
-  .feature {
-    padding: 2.5%;
-  }
+  @media screen and (min-width: 720px) {
+    display: inherit;
+  } 
 }
 
+// footer
 .footer {
-  background-color: @background;
-  padding-bottom: 2.5%;
+  background-color: rgb(25, 25, 25);
+  color: white;
+  flex-flow: column;
+  height: 100vh;
+  .muscle(@j: space-between);
+  padding: 10% 0 5% 0;
   text-align: center;
 
-  .contact {
-    padding: 2.5%;
+  @media screen and (min-width: 720px) {
+    padding: 5% 0 2.5% 0;
+  }
+
+  h4 {
+    font-size: 2rem;
+  }
+  
+  .contact-us {
+    height: 50vh;
+    margin-bottom: 10%;
+    width: 100%;
+
+    @media screen and (min-width: 720px) {
+      margin-bottom: 5%;
+    }
 
     input, textarea {
-      background-color: @accent;
-      border: 0;
-      border-radius: 3px;
-      color: @background;
-      padding: 1%;
-      width: 100%;
+      background-color: lightcoral;
+      border: 2px solid lightcoral;
+      border-radius: 10px;
+      color: white;
+      font-family: inherit;
+      margin: 1% 0;
+      padding: 2%;
+      width: 80%;
 
-      @media (min-width: @tablet) {
-        width: 75%;
+      @media screen and (min-width: 720px) {
+        font-size: 1.25rem;
+      }
+
+      &::placeholder {
+        color: rgb(25, 25, 25);
       }
     }
 
-    input {
-      margin-bottom: 2.5%;
-    }
-
     textarea {
-      height: 150px;
+      min-height: 25vh;
       resize: none;
     }
   }
 
   .copyright {
     font-size: 80%;
+    justify-self: flex-end;
   }
 }
