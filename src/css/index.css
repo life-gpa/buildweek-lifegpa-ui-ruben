@@ -4437,6 +4437,7 @@ a {
   text-decoration: none;
 }
 html {
+  background-color: #0a0a0a;
   font-family: 'Montserrat', sans-serif;
 }
 .header {
@@ -4582,6 +4583,41 @@ html {
   .hidden {
     display: inherit;
   }
+}
+main {
+  padding: 5%;
+}
+main section {
+  background-color: #191919;
+  color: white;
+  font-weight: 300;
+  padding: 2.5%;
+  text-align: center;
+}
+main section h3 {
+  background-color: lightcoral;
+  font-size: 1.5rem;
+  padding: 2.5% 0;
+  text-transform: uppercase;
+}
+main section p {
+  line-height: 2rem;
+  margin-top: 2.5%;
+}
+@media screen and (min-width: 720px) {
+  main section p {
+    font-size: 1.25rem;
+  }
+}
+main section .squadmates h3 {
+  background-color: #333333;
+  border-radius: 5px;
+  font-weight: bold;
+  margin: 2.5% 0;
+  transition: background-color 0.5s;
+}
+main section .squadmates a:hover h3 {
+  background-color: #595959;
 }
 .footer {
   background-color: #191919;
