@@ -14,3 +14,18 @@ class Navigation {
 
 const nav = document.querySelectorAll('.navigation')
                     .forEach(nav => new Navigation(nav));
+
+const goto = (target, location) => {
+  target.preventDefault();
+  target.stopPropagation();
+
+  window.location.href = location;
+};
+
+const reg = document.querySelector('#register'),
+      log = document.querySelector('#login');
+
+if (reg !== null && log !== null) {
+  reg.addEventListener('click', e => goto(e, 'https://nifty-snyder-6380f8.netlify.com/SignUp'));
+  log.addEventListener('click', e => goto(e, 'https://nifty-snyder-6380f8.netlify.com/Login'));
+}
